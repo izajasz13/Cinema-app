@@ -1,1 +1,1 @@
-# cinem-app
+# Cinema app
