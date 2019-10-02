@@ -8,7 +8,7 @@ async function getMovies(){
     const getCurrMovies = await fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=e2cc5c81b40a3219ee15462c33afab71&language=en-US&page=1');
     const jsonCurrMovies = await getCurrMovies.json();
     const arrayCurrMovies = jsonCurrMovies.results;
-    for(let i = 0; i < 10; ++i){
+    for(let i = 0; i < 12; ++i){
         const genre = [];
         arrayCurrMovies[i].genre_ids.forEach(ele => genre.push(genres[ele]));     
         const movie = {
