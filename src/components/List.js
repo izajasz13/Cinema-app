@@ -26,4 +26,4 @@ const List = ({ movies, selectMovie}) => {
     )
 }
 
-export default List;
+export default List

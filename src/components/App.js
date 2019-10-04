@@ -18,6 +18,7 @@ class App extends React.Component{
         const movie = this.state.movies[index];
         this.setState({component: 'info', movie});
     }
+    
     toShow(){
         if(this.state.component === 'list')
             return <List 
