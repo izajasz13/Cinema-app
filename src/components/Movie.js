@@ -1,4 +1,5 @@
 import React from 'react';
+import './Movie.css';
 
 class Movie extends React.Component {
 
@@ -13,8 +14,8 @@ class Movie extends React.Component {
     render() {
         return(
             <div className="ui segment column twelve">
-                <img src = {this.posterPath()} alt="poster"/>
-                <h3>{this.movieName()}</h3>
+                <img className="poster" src = {this.posterPath()} alt="poster"/>
+                <h3 className="title">{this.movieName()}</h3>
             </div>
         );
     }

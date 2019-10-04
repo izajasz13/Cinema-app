@@ -1,14 +1,34 @@
 import React from 'react';
 import getMovies from '../api';
 import List from './List';
+import Info from './Info';
 import './App.css';
 
 class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            component: 'list',
+            movie: '',
             movies: []
         }
+    }
+
+    selectMovie = (index) => {
+        console.log(index);
+        const movie = this.state.movies[index];
+        console.log(movie)
+        this.setState({component: 'info', movie});
+    }
+
+    toShow(){
+        if(this.state.component === 'list')
+            return <List 
+                        movies = {this.state.movies} 
+                        selectMovie = {this.selectMovie}
+                    />;
+        if(this.state.component === 'info')
+            return <Info movie = {this.state.movie} />;
     }
 
     componentDidMount(){
@@ -18,7 +38,7 @@ class App extends React.Component{
     render() {
         return (
             <div className="main-box">
-                <List movies = {this.state.movies} />
+                {this.toShow()}
             </div>
         );
     }
