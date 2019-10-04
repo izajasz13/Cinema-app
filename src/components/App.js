@@ -1,10 +1,27 @@
 import React from 'react';
 import getMovies from '../api';
+import List from './List';
+import './App.css';
 
-getMovies();
+class App extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            movies: []
+        }
+    }
 
-const App = () => {
-    return <div>Cinema app</div>;
-};
+    componentDidMount(){
+        getMovies().then(res => this.setState({movies: res}));
+    }
+
+    render() {
+        return (
+            <div className="main-box">
+                <List movies = {this.state.movies} />
+            </div>
+        );
+    }
+}
 
 export default App;
