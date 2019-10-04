@@ -1,25 +1,29 @@
 import React from 'react';
 import Movie from './Movie';
+import { Link } from 'react-router-dom'
+import {RouteBuilder} from "../RouteBuilder"
 
-class List extends React.Component{
-    selectMovie = (e) =>{
-        e.preventDefault();
-
-        const index = e.currentTarget.dataset.index;
-        this.props.selectMovie(index)
+const List = ({ movies, selectMovie}) => {
+    const onSelectMovie = e =>{
+        e.preventDefault()
+        const index = e.currentTarget.dataset.index
+        selectMovie(index)
     }
 
-    render(){
-        return(
-            <div className="ui grid">
-                {this.props.movies.map((ele, index) => 
-                    <div className = "four wide column one column stackable center aligned page grid" onClick={this.selectMovie} key={ele.title} data-index={index}>
-                        <Movie movie = {ele} />
-                    </div>
-                )}
-            </div>
-        );
-    }
+    return(
+        <div className="ui grid">
+            {movies.map((ele, index) => 
+                <div className = "four wide column one column stackable center aligned page grid" onClick={onSelectMovie} key={ele.title} data-index={index}>
+                    <Link to={{
+                            pathname: RouteBuilder.toMovieInfo(),
+                            params: ele
+                        }}>
+                        <Movie movie={ele} />
+                    </Link>
+                </div>
+            )}
+        </div>
+    )
 }
 
 export default List;

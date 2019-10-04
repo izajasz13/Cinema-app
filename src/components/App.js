@@ -15,18 +15,15 @@ class App extends React.Component{
     }
 
     selectMovie = (index) => {
-        console.log(index);
         const movie = this.state.movies[index];
-        console.log(movie)
         this.setState({component: 'info', movie});
     }
-
     toShow(){
         if(this.state.component === 'list')
             return <List 
                         movies = {this.state.movies} 
                         selectMovie = {this.selectMovie}
-                    />;
+                    />
         if(this.state.component === 'info')
             return <Info movie = {this.state.movie} />;
     }
