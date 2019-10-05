@@ -1,6 +1,7 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
-
+import {Link} from 'react-router-dom'
+import {RouteBuilder} from "../RouteBuilder"
 
 class Info extends React.Component {
     state={
@@ -32,8 +33,12 @@ class Info extends React.Component {
                 <div className = "six wide column">
                     <img className = "poster" src = {`https://image.tmdb.org/t/p/original${this.state.img}`} alt="poster"/>
                     <div className = "stackable grid">
-                        <button className = "ui button eight wide column">Buy</button>
-                        <button className = "ui button eight wide column">Book</button>
+                        <Link to={{
+                                pathname: RouteBuilder.reservation(this.props.location.pathname),
+                                params: this.state
+                            }}>
+                                <button className = "ui button eight wide column">Book</button>
+                        </Link>
                     </div>
                 </div>
                 <div className = "ten wide column">

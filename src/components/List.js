@@ -13,7 +13,7 @@ const List = ({ movies, selectMovie}) => {
     return(
         <div className="ui grid">
             {movies.map((ele, index) => {
-                return(<div className = "four wide column one column stackable center aligned page grid" onClick={onSelectMovie} key={ele.title} data-index={index}>
+                return(<div style = {{padding: '0px'}} className = "four wide column stackable center aligned page grid" onClick={onSelectMovie} key={ele.title} data-index={index}>
                     <Link to={{
                             pathname: RouteBuilder.toMovieInfo(ele.id),
                             params: ele
