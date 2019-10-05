@@ -10,7 +10,7 @@ const Dashboard = () => (
         <Router>
             <Switch>
                 <Route exact path={`/panel`} component={App}/>
-                <Route exact path={`/panel/movie`} component={Info} />
+                <Route exact path={`/panel/movie/:filmId`} component={Info} />
                 <Redirect exact from={`/`} to={`/panel`} />
             </Switch>
         </Router>
