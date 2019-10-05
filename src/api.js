@@ -22,23 +22,6 @@ async function getMovies(){
         movies.push(movie);
     }
 
-    // const getUpMovies = await fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=e2cc5c81b40a3219ee15462c33afab71&language=en-US&page=1');
-    // const jsonUpMovies = await getUpMovies.json();
-    // const arrayUpMovies = jsonUpMovies.results;
-    // for(let i = 1; i < 4; ++i){
-    //     const genre = [];
-    //     arrayUpMovies[i].genre_ids.forEach(ele => genre.push(genres[ele]));     
-    //     const movie = {
-    //         title: arrayUpMovies[i].title,
-    //         description: arrayUpMovies[i].overview,
-    //         release_date: arrayUpMovies[i].release_date,
-    //         genre: genre,
-    //         vote: arrayUpMovies[i].vote_average,
-    //         img: arrayUpMovies[i].poster_path
-    //     }
-    //     movies.push(movie);
-    // }
-
     return movies;
 }
 

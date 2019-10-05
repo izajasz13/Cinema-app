@@ -20,6 +20,6 @@ const Info = (props) => (
         </div>
         
     </div>
-)
+);
 
 export default withRouter(Info);
