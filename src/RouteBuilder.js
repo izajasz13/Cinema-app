@@ -1,3 +1,3 @@
 export const RouteBuilder = {
-    toMovieInfo: () => `/panel/movie`
+    toMovieInfo: (filmId) => `/panel/movie/${filmId}`
 }

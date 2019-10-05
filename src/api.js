@@ -12,6 +12,7 @@ async function getMovies(){
         const genre = [];
         arrayCurrMovies[i].genre_ids.forEach(ele => genre.push(genres[ele]));     
         const movie = {
+            id: arrayCurrMovies[i].id,
             title: arrayCurrMovies[i].title,
             description: arrayCurrMovies[i].overview,
             release_date: arrayCurrMovies[i].release_date,
