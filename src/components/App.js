@@ -4,6 +4,17 @@ import List from './List';
 import Info from './Info';
 import './App.css';
 
+//Redux
+// import {connect} from 'react-redux';
+// import { addReservation, removeReservation } from '../actions';
+
+// const mapStateToProps = (state) => {
+//   return {
+//     reservations: state.reservations // (1)
+//   }
+// };
+// const mapDispatchToProps = { addReservation, removeReservation };
+
 class App extends React.Component{
     constructor(props){
         super(props);
@@ -43,3 +54,6 @@ class App extends React.Component{
 }
 
 export default App;
+
+//Redux
+// export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
