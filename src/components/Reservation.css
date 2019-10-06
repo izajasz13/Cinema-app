@@ -4,8 +4,10 @@
 
 .selected{
     background-color: yellow;
+    cursor: pointer;
 }
 
 .avalible{
     background-color: green;
+    cursor: pointer;
 }

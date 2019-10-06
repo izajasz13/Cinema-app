@@ -38,7 +38,7 @@ class Info extends React.Component {
                         <div className = "stackable grid">
                             <Link to={{
                                     pathname: RouteBuilder.reservation(this.props.location.pathname),
-                                    params: this.state
+                                    params: this.state.title
                                 }}>
                                     <button className = "ui button eight wide column">Book</button>
                             </Link>
