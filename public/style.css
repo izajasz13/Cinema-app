@@ -1,0 +1,7 @@
+.root {
+    background-image: url(img/cinema.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}

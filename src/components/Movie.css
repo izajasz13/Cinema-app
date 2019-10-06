@@ -1,4 +1,20 @@
 .poster{
     width: 80%;
-    cursor: pointer;
+}
+
+.title {
+    background-color: rgba(126, 126, 126, 0.904);
+    border-radius: .3rem;
+    width: 60%;
+    margin: 1em auto;
+    padding: .9rem .5rem;
+    border-radius: 5px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: white;
+    text-decoration: none;
 }

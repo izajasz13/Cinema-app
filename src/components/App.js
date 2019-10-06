@@ -14,8 +14,8 @@ import './App.css';
 // };
 // const mapDispatchToProps = { addReservation, removeReservation };
 
-class App extends React.Component{
-    constructor(props){
+class App extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             movie: '',
@@ -28,8 +28,8 @@ class App extends React.Component{
     }
 
     render() {
-        return (
-            <div className="main-box">
+        return (               
+            <div className="container">
                 <List movies = {this.state.movies}/>
             </div>
         );
