@@ -4,20 +4,20 @@ import './List.css'
 import { Link } from 'react-router-dom'
 import { RouteBuilder } from "../RouteBuilder"
 
-const List = ({ movies }) => (
+const List = ({ movies }) =>{console.log(movies.map((el) => el)); return (
     <div className="movie-box">
-        {movies.map((ele, index) => {
-            return(<div className = "movie-card" key={ele.title} data-index={index}>
-                <Link to={{
-                    pathname: RouteBuilder.toMovieInfo(ele.id),
-                    params: ele
-                }}>
-                    <Movie movie={ele} />
-                </Link>
-            </div>)
+        {
+            movies.map((ele, index) => (
+                <div className = "movie-card" key={ele.title} data-index={index}>
+                    <Link to={{
+                        pathname: RouteBuilder.toMovieInfo(ele.id),
+                    }}>
+                        <Movie movie={ele} />
+                    </Link>
+                </div>
+            ))
         }
-        )}
     </div>
-)
+)}
 
 export default List;

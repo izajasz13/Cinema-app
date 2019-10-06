@@ -1,6 +1,7 @@
 import React from 'react';
 import Seat from './components/Seat';
-const reserved = [];
+
+const reserved = [12, 15, 19, 41];
 let selected = [];
 
 const onClickSeat = (e) => {
@@ -20,8 +21,10 @@ const onClickSeat = (e) => {
     console.log(selected);
 }
 
-export const onClickProceed = () => {
+export const proceed = (id, email) => {
 
+    console.log(id);
+    console.log(email);
 }
 
 export const seatDiv = (seat) => {

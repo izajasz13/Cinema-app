@@ -9,7 +9,7 @@ const Header = () => <div className="i-dashboard-header" >
                 <p>Cinema App</p>
             </a>
         </div>
-        <img className="card" src="https://img.icons8.com/pastel-glyph/64/000000/bank-card-front-side--v2.png" />
+        <img className="card" src="https://img.icons8.com/pastel-glyph/64/000000/bank-card-front-side--v2.png" alt=""/>
     </div>
 </div>
 

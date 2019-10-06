@@ -30,6 +30,7 @@ class Info extends React.Component {
             })
     }
 
+
     render() {
         return this.state.dataSet ? (
             <div className="info-box">
@@ -44,7 +45,12 @@ class Info extends React.Component {
                     <p><span className="info-span">Average rating: </span>{this.state.vote}</p>
                     <div className="buttons">
                         <button className="ui button eight wide column">Buy</button>
-                        <button className="ui button eight wide column">Book</button>
+                        <Link to={{
+                            pathname: RouteBuilder.reservation(this.props.location.pathname),
+                            params: this.state
+                        }}>
+                            <button className="ui button eight wide column">Book</button>
+                        </Link>
                     </div>
                 </div>
             </div>
