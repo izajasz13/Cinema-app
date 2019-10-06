@@ -8,7 +8,7 @@
     width: 75%;
     height: 70%;
     max-width: 1920px;
-    margin: 60px auto;
+    margin: 80px auto;
     background-color: rgba(96, 96, 96, 0.322);
     border: 1px solid rgba(253, 253, 253, 0.26);
     box-shadow: 1px 1px 2px 0 rgba(214, 218, 221, 0.404);
@@ -61,4 +61,48 @@
     background-color: white;
     color: rgba(126, 126, 126, 0.945);
     transform: scale(1.05)
+}
+
+@media (max-width: 1024px) {
+    .root {
+    padding-bottom: 20px;
+    }
+
+    .info-box {
+        flex-direction: column;
+       text-align: center;
+       width: 80%;
+    }
+
+    .info-content {
+        padding: 20px;
+    }
+
+    .info-content h2 {
+        margin-top: 0;
+    }
+
+    .buttons button {
+        margin-left: 0;
+    }
+}
+
+@media (min-height: 1080px) {
+    .info-content {
+        font-size: 2rem;
+    }
+
+    .info-box {
+        margin-top: 150px;
+    }
+
+    .buttons button {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .root {
+    padding-bottom: 20px;
+    }
 }
