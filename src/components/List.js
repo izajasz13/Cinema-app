@@ -4,7 +4,7 @@ import './List.css'
 import { Link } from 'react-router-dom'
 import { RouteBuilder } from "../RouteBuilder"
 
-const List = ({ movies }) =>{console.log(movies.map((el) => el)); return (
+const List = ({ movies }) =>{return (
     <div className="movie-box">
         {
             movies.map((ele, index) => (

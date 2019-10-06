@@ -5,7 +5,7 @@ const Header = () => <div className="i-dashboard-header" >
     <div className="header-content">
         <div className="logo">
             <a href="/panel">
-                <img className="camera" src="https://img.icons8.com/pastel-glyph/128/000000/old-time-camera--v2.png" />
+                <img className="camera" src="https://img.icons8.com/pastel-glyph/128/000000/old-time-camera--v2.png" alt=""/>
                 <p>Cinema App</p>
             </a>
         </div>

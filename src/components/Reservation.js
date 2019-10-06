@@ -1,5 +1,5 @@
 import React from 'react';
-import {seatDiv, proceed} from '../reservation';
+import {seatDiv, proceed, getReservations} from '../reservation';
 import './Reservation.css';
 import { validate } from '@babel/types';
 
@@ -13,12 +13,15 @@ class Reservation extends React.Component{
         seats:[]
     }
 
-    componentDidMount(){
+    async componentDidMount(){
+        const id = this.props.match.params.filmId
+        await getReservations(id);
+
         const arrSeat = this.state.seats;
         for(let i = 1; i <= 48; ++i){
             arrSeat.push(i);
         }
-        this.setState({seats: arrSeat})
+        this.setState({seats: arrSeat})       
     }
 
     validate = () => {
@@ -32,19 +35,26 @@ class Reservation extends React.Component{
         if(email === '')
             return;
         const id = this.props.match.params.filmId
-        proceed(id, email)
+        if(proceed(id, email)){
+            const form = e.currentTarget.parentNode;
+            const div = form.parentNode;
+            div.removeChild(form);
+            const message = document.createElement('div');
+            message.innerText = `Confiramtion send to ${email}`;
+            div.appendChild(message);
+        }
     }
 
     render(){
         return(
             <div className="hall-box">
-                <div className="ui grid">
-                    <div className="column sixteen wide" style={{textAlign: "center"}}>SCREEN</div>
+                <div className="screen">SCREEN</div>
+                <div className="grid">
                     {this.state.seats.map(seatDiv)}
                 </div>
-                <form className="ui form" ref={this.form} onSubmit = {e => e.preventDefault()}>
+                <form className="form" ref={this.form} onSubmit = {e => e.preventDefault()}>
                     <input className="email field" type="email" placeholder="email" required/>
-                    <button className="ui button" onClick={this.onClickProceed}>Submit</button>
+                    <button className="button" onClick={this.onClickProceed}>Submit</button>
                 </form>
             </div>
         );

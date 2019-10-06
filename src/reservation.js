@@ -1,8 +1,14 @@
 import React from 'react';
 import Seat from './components/Seat';
 
-const reserved = [12, 15, 19, 41];
+let reserved = [12];
 let selected = [];
+
+export const getReservations = async (id) =>{
+    await fetch(`http://cinema-app-coderscamp.herokuapp.com/api/movies/${id}`)
+        .then(res => res.json())
+        .then(res => reserved = res[0].hall.seats);
+}
 
 const onClickSeat = (e) => {
     const box = e.currentTarget;
@@ -21,10 +27,22 @@ const onClickSeat = (e) => {
     console.log(selected);
 }
 
-export const proceed = (id, email) => {
-
-    console.log(id);
-    console.log(email);
+export const proceed = async (id, email) => {
+    if(selected === [])
+        return false;
+    const data = {
+        seats: selected,
+        seance: id,
+        email
+    }
+    await fetch(`http://cinema-app-coderscamp.herokuapp.com/api/movies/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    return true;
 }
 
 export const seatDiv = (seat) => {
