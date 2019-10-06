@@ -1,11 +1,11 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
-import {Link} from 'react-router-dom'
-import {RouteBuilder} from "../RouteBuilder"
+import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { RouteBuilder } from "../RouteBuilder"
 import "./Info.css"
 
 class Info extends React.Component {
-    state={
+    state = {
         dataSet: false,
         img: "",
         title: "",
@@ -55,10 +55,10 @@ class Info extends React.Component {
                 </div>
             </div>
         ) : (
-            <div className="ui active dimmer">
+                <div className="ui active dimmer">
                     <div className="ui text loader">Loading</div>
-            </div>
-        )
+                </div>
+            )
     }
 }
 
