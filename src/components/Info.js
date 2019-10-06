@@ -30,6 +30,7 @@ class Info extends React.Component {
             })
     }
 
+
     render() {
         return this.state.dataSet ? (
             <div className="info-box">
