@@ -1,0 +1,11 @@
+.reserved{
+    background-color: red;
+}
+
+.selected{
+    background-color: yellow;
+}
+
+.avalible{
+    background-color: green;
+}
