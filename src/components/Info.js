@@ -2,6 +2,7 @@ import React from 'react'
 import {withRouter} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import {RouteBuilder} from "../RouteBuilder"
+import "./Info.css"
 
 class Info extends React.Component {
     state={
@@ -29,38 +30,29 @@ class Info extends React.Component {
             })
     }
 
-    render(){
-        if(this.state.dataSet){
-            return (
-                <div className = "info-box ui grid">
-                    <div className = "six wide column">
-                        <img className = "poster" src = {`https://image.tmdb.org/t/p/original${this.state.img}`} alt="poster"/>
-                        <div className = "stackable grid">
-                            <Link to={{
-                                    pathname: RouteBuilder.reservation(this.props.location.pathname),
-                                    params: this.state
-                                }}>
-                                    <button className = "ui button eight wide column">Book</button>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className = "ten wide column">
-                        <h2>{this.state.title}</h2>
-                        <p>{this.state.description}</p>
-                        <ul>{this.state.genre.map((ele, index) => <li key={index}>{ele}</li>)}</ul>
-                        <p>{this.state.release_date}</p>
-                        <p>{this.state.vote}</p>
+    render() {
+        return this.state.dataSet ? (
+            <div className="info-box">
+                <div className="poster-box">
+                    <img className="poster" src={`https://image.tmdb.org/t/p/original${this.state.img}`} alt="poster" />
+                </div>
+                <div className="info-content">
+                    <h2><span className="info-span">Tittle: </span>{this.state.title}</h2>
+                    <p><span className="info-span">Description: </span>{this.state.description}</p>
+                    <ul>{this.state.genre.map((ele, index) => <li key={index}>{ele}</li>)}</ul>
+                    <p>{this.state.release_date}</p>
+                    <p><span className="info-span">Average rating: </span>{this.state.vote}</p>
+                    <div className="buttons">
+                        <button className="ui button eight wide column">Buy</button>
+                        <button className="ui button eight wide column">Book</button>
                     </div>
                 </div>
-            );
-        }
-        else{
-            return (
-                <div className="ui active dimmer">
-                        <div className="ui text loader">Loading</div>
-                </div>
-            );
-        }
+            </div>
+        ) : (
+            <div className="ui active dimmer">
+                    <div className="ui text loader">Loading</div>
+            </div>
+        )
     }
 }
 
