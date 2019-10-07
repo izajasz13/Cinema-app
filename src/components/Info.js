@@ -44,7 +44,6 @@ class Info extends React.Component {
                     <p>{this.state.release_date}</p>
                     <p><span className="info-span">Average rating: </span>{this.state.vote}</p>
                     <div className="buttons">
-                        <button className="ui button eight wide column">Buy</button>
                         <Link to={{
                             pathname: RouteBuilder.reservation(this.props.location.pathname),
                             params: this.state

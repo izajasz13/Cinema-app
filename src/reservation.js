@@ -5,7 +5,7 @@ let reserved = [12];
 let selected = [];
 
 export const getReservations = async (id) =>{
-    await fetch(`http://cinema-app-coderscamp.herokuapp.com/api/movies/${id}`)
+    await fetch(`https://cinema-app-coderscamp.herokuapp.com/api/movies/${id}`)
         .then(res => res.json())
         .then(res => reserved = res[0].hall.seats);
 }
@@ -35,7 +35,7 @@ export const proceed = async (id, email) => {
         seance: id,
         email
     }
-    await fetch(`http://cinema-app-coderscamp.herokuapp.com/api/movies/${id}`, {
+    await fetch(`https://cinema-app-coderscamp.herokuapp.com/api/movies/${id}`, {
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
