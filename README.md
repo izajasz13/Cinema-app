@@ -3,4 +3,5 @@ Front-end app implemented as part of Coders Camp programming course. App works w
   
 To run this app locally download files and run commands:
 >npm i  
+>npm run build  
 >npm start
